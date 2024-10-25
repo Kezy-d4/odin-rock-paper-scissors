@@ -1,7 +1,6 @@
 function getComputerChoice() {
   let randomNumber = Math.random() * 100;
   let computerChoice;
-  console.log(randomNumber);
 
   if (randomNumber < 33.33) {
     computerChoice = "Rock";
@@ -11,6 +10,7 @@ function getComputerChoice() {
     computerChoice = "Scissors";
   }
 
+  console.log(randomNumber);
   console.log(computerChoice);
   return computerChoice;
 }
