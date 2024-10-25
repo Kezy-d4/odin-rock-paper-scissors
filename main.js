@@ -1,14 +1,18 @@
 function getComputerChoice() {
-  randomNumber = Math.random() * 100;
+  let randomNumber = Math.random() * 100;
+  let computerChoice;
   console.log(randomNumber);
 
   if (randomNumber < 33.33) {
-    console.log("Rock");
+    computerChoice = "Rock";
   } else if (randomNumber >= 33.33 && randomNumber <= 66.66) {
-    console.log("Paper");
+    computerChoice = "Paper";
   } else {
-    console.log("Scissors");
+    computerChoice = "Scissors";
   }
+
+  console.log(computerChoice);
+  return computerChoice;
 }
 
 getComputerChoice();
