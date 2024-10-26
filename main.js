@@ -22,13 +22,13 @@ function getHumanChoice() {
   console.log(humanChoice);
 
   if (humanChoice === null) {
-    alert("Cancelled");
+    alert("Cancelled. Refresh the page to try again.");
 
   } else if (humanChoice === "Rock" || humanChoice === "Paper" || humanChoice === "Scissors") {
     return humanChoice;
 
   } else {
-    alert("Invalid hand entry. Ensure you spell and capitalize your chosen hand correctly.");
+    alert("Invalid hand entry. Ensure you spell and capitalize your chosen hand correctly. Refresh the page to try again.");
   }
 }
 
