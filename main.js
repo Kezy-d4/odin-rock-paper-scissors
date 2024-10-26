@@ -18,17 +18,19 @@ function getComputerChoice() {
 getComputerChoice();
 
 function getHumanChoice() {
-  let humanChoice = prompt("Which hand will you throw: Rock, Paper, or Scissors? ");
+  let humanChoice = prompt("Which hand will you throw: Rock, Paper, or Scissors? Type in your choice.");
+
+  if (humanChoice !== null) {
+  humanChoice = humanChoice.toLowerCase();
+  }
   console.log(humanChoice);
 
   if (humanChoice === null) {
     alert("Cancelled. Refresh the page to try again.");
-
-  } else if (humanChoice === "Rock" || humanChoice === "Paper" || humanChoice === "Scissors") {
+  } else if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
     return humanChoice;
-
   } else {
-    alert("Invalid hand entry. Ensure you spell and capitalize your chosen hand correctly. Refresh the page to try again.");
+    alert("Invalid hand entry. Ensure you spell your chosen hand correctly. Refresh the page to try again.");
   }
 }
 
