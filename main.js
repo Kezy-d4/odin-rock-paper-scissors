@@ -28,7 +28,7 @@ function getHumanChoice() {
     return humanChoice;
 
   } else {
-    alert("Invalid hand entry. Ensure you spell and capitalize your hand correctly.");
+    alert("Invalid hand entry. Ensure you spell and capitalize your chosen hand correctly.");
   }
 }
 
