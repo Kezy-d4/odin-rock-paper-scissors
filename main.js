@@ -17,4 +17,19 @@ function getComputerChoice() {
 
 getComputerChoice();
 
-let a;
+function getHumanChoice() {
+  let humanChoice = prompt("Which hand will you throw: Rock, Paper, or Scissors? ");
+  console.log(humanChoice);
+
+  if (humanChoice === null) {
+    alert("Cancelled");
+
+  } else if (humanChoice === "Rock" || humanChoice === "Paper" || humanChoice === "Scissors") {
+    return humanChoice;
+
+  } else {
+    alert("Invalid hand entry. Ensure you spell and capitalize your hand correctly.");
+  }
+}
+
+getHumanChoice();
