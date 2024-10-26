@@ -16,3 +16,5 @@ function getComputerChoice() {
 }
 
 getComputerChoice();
+
+let a;
