@@ -7,10 +7,10 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  background-color: gainsboro;
+  background-color: whitesmoke;
   width: 350px;
   height: 100vh;
-  border-right: solid black 2px;
+  border-right: solid grey 1px;
 }
 
 .game-instructions {
