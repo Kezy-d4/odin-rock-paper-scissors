@@ -9,13 +9,15 @@
 .game-instructions,
 h1,
 h2,
-p {
+p,
+a {
   background-color: #ebdfdf;
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 350px;
   height: 100vh;
   border-right: solid grey 1px;
@@ -42,4 +44,10 @@ h2 {
 p {
   font-size: 15px;
   margin-bottom: 10px;
+}
+
+a {
+  font-size: 15px;
+  text-align: center;
+  margin: 13px;
 }
