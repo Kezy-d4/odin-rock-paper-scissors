@@ -16,7 +16,7 @@
 .game-instructions {
   display: flex;
   flex-direction: column;
-  margin: 5px 20px;
+  margin: 5px 40px;
 }
 
 h1 {
