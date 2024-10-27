@@ -3,19 +3,16 @@ function getComputerChoice() {
   let computerChoice;
 
   if (randomNumber < 33.33) {
-    computerChoice = "Rock";
+    computerChoice = "rock";
   } else if (randomNumber >= 33.33 && randomNumber <= 66.66) {
-    computerChoice = "Paper";
+    computerChoice = "paper";
   } else {
-    computerChoice = "Scissors";
+    computerChoice = "scissors";
   }
 
   console.log(randomNumber);
-  console.log(computerChoice);
   return computerChoice;
 }
-
-getComputerChoice();
 
 function getHumanChoice() {
   let humanChoice = prompt("Which hand will you throw: Rock, Paper, or Scissors? Type in your choice.");
@@ -23,7 +20,6 @@ function getHumanChoice() {
   if (humanChoice !== null) {
   humanChoice = humanChoice.toLowerCase();
   }
-  console.log(humanChoice);
 
   if (humanChoice === null) {
     alert("Cancelled. Refresh the page to try again.");
@@ -34,4 +30,22 @@ function getHumanChoice() {
   }
 }
 
-getHumanChoice();
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice === undefined) {
+    console.log("Refresh the page to try again.");
+  } else {
+    console.log(`You throw ${humanChoice}. Computer throws ${computerChoice}.`);
+  }
+  
+  if (humanChoice === computerChoice) {
+    console.log("This hand is a draw! No points are scored.");
+  }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
