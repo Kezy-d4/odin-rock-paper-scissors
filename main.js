@@ -34,4 +34,4 @@ function getHumanChoice() {
   }
 }
 
-getHumanChoice();
+// getHumanChoice();
