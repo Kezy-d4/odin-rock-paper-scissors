@@ -30,58 +30,64 @@ function getHumanChoice() {
   }
 }
 
-let humanScore = 0;
-let computerScore = 0;
+function playGame() {
+  let humanScore = 0;
+  let computerScore = 0;
 
-function playRound(humanChoice, computerChoice) {
-  if (humanChoice !== undefined) {
-    humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.substring(1);
-  }
+  function playRound(humanChoice, computerChoice) {
+    if (humanChoice !== undefined) {
+      humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.substring(1);
+    }
 
-  if (humanChoice === undefined) {
-    console.log("Refresh the page to try again.");
-  } else {
-    console.log(`You throw ${humanChoice}. Computer throws ${computerChoice}.`);
+    if (humanChoice === undefined) {
+      console.log("Refresh the page to try again.");
+    } else {
+      console.log(`You throw ${humanChoice}. Computer throws ${computerChoice}.`);
+    }
+
+    if (humanChoice === computerChoice) {
+      console.log("This hand is a draw! No points are scored.");
+
+    } else if (humanChoice === "Rock") {
+        if (computerChoice === "Scissors") {
+          humanScore++;
+          console.log("You win this hand! Rock beats Scissors.");
+        } else if (computerChoice === "Paper") {
+          computerScore++;
+          console.log("Computer wins this hand! Paper beats Rock.");
+        }
+
+    } else if (humanChoice === "Paper") {
+       if (computerChoice === "Rock") {
+        humanScore++;
+        console.log("You win this hand! Paper beats Rock.");
+       } else if (computerChoice === "Scissors") {
+        computerScore++;
+        console.log("Computer wins this hand! Scissors beats Paper.");
+       }
+
+    } else if (humanChoice === "Scissors") {
+        if (computerChoice === "Paper") {
+          humanScore++;
+          console.log("You win this hand! Scissors beats Paper");
+        } else if (computerChoice === "Rock") {
+          computerScore++;
+          console.log("Computer wins this hand! Rock beats Scissors.");
+        }
+    }
+
+    if (humanChoice !== undefined) {
+      console.log(`Player score: ${humanScore}`);
+      console.log(`Computer score: ${computerScore}`);
+    }
   }
   
-  if (humanChoice === computerChoice) {
-    console.log("This hand is a draw! No points are scored.");
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
 
-  } else if (humanChoice === "Rock") {
-      if (computerChoice === "Scissors") {
-        humanScore++;
-        console.log("You win this hand! Rock beats Scissors.");
-      } else if (computerChoice === "Paper") {
-        computerScore++;
-        console.log("Computer wins this hand! Paper beats Rock.");
-      }
-
-  } else if (humanChoice === "Paper") {
-     if (computerChoice === "Rock") {
-      humanScore++;
-      console.log("You win this hand! Paper beats Rock.");
-     } else if (computerChoice === "Scissors") {
-      computerScore++;
-      console.log("Computer wins this hand! Scissors beats Paper.");
-     }
-
-  } else if (humanChoice === "Scissors") {
-      if (computerChoice === "Paper") {
-        humanScore++;
-        console.log("You win this hand! Scissors beats Paper");
-      } else if (computerChoice === "Rock") {
-        computerScore++;
-        console.log("Computer wins this hand! Rock beats Scissors.");
-      }
-  }
-
-  if (humanChoice !== undefined) {
-    console.log(`Player score: ${humanScore}`);
-    console.log(`Computer score: ${computerScore}`);
-  }
+  return playRound(humanSelection, computerSelection);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+playGame();
 
-playRound(humanSelection, computerSelection);
+
