@@ -22,11 +22,11 @@ function getHumanChoice() {
   }
 
   if (humanChoice === null) {
-    alert("Cancelled. Refresh the page to try again.");
+    alert("Cancelled.");
   } else if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
     return humanChoice;
   } else {
-    alert("Invalid hand entry. Ensure you spell your chosen hand correctly. Refresh the page to try again.");
+    alert("Invalid hand entry. Ensure you spell your chosen hand correctly.");
   }
 }
 
@@ -40,7 +40,7 @@ function playGame() {
     }
 
     if (humanChoice === undefined) {
-      console.log("Refresh the page to try again.");
+      console.warn("You failed to input a valid hand entry. This match is invalidated. Please reset the page to play again.");
     } else {
       console.log(`You throw ${humanChoice}. Computer throws ${computerChoice}.`);
     }
@@ -81,11 +81,25 @@ function playGame() {
       console.log(`Computer score: ${computerScore}`);
     }
   }
-  
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
 
-  return playRound(humanSelection, computerSelection);
+  console.log("Round1:");
+  playRound(getHumanChoice(), getComputerChoice());
+  console.log("Round2:");
+  playRound(getHumanChoice(), getComputerChoice());
+  console.log("Round3:");
+  playRound(getHumanChoice(), getComputerChoice());
+  console.log("Round4:");
+  playRound(getHumanChoice(), getComputerChoice());
+  console.log("Round5:");
+  playRound(getHumanChoice(), getComputerChoice());
+
+  if (humanScore === computerScore) {
+    console.log("This match is a draw! Good game.");
+  } else if (humanScore > computerScore) {
+    console.log("You win the match! Well played.");
+  } else {
+    console.log("Computer wins the match! Good game.");
+  }
 }
 
 playGame();
