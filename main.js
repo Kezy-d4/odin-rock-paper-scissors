@@ -15,35 +15,50 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let humanChoice = prompt("Which hand will you throw: Rock, Paper, or Scissors? Type in your choice.");
+  // let humanChoice = prompt("Which hand will you throw: Rock, Paper, or Scissors? Type in your choice.");
 
-  if (humanChoice !== null) {
-  humanChoice = humanChoice.toLowerCase();
-  }
+  let humanChoice;
+  const buttons = document.querySelectorAll('button');
 
-  if (humanChoice === null) {
-    alert("Cancelled.");
-  } else if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
-    return humanChoice;
-  } else {
-    alert("Invalid hand entry. Ensure you spell your chosen hand correctly.");
-  }
+  buttons.forEach((button) => {
+
+    button.addEventListener('click', () => {
+      humanChoice = button.className;
+      console.log(humanChoice);
+      
+      return humanChoice;
+    });
+  });
+
+  // if (humanChoice !== null) {
+  // humanChoice = humanChoice.toLowerCase();
+  // }
+
+  // if (humanChoice === null) {
+  //   alert("Cancelled.");
+  // } else if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
+  //   return humanChoice;
+  // } else {
+  //   alert("Invalid hand entry. Ensure you spell your chosen hand correctly.");
+  // }
 }
+
+getHumanChoice();
 
 function playGame() {
   let humanScore = 0;
   let computerScore = 0;
 
   function playRound(humanChoice, computerChoice) {
-    if (humanChoice !== undefined) {
-      humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.substring(1);
-    }
+    // if (humanChoice !== undefined) {
+    humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.substring(1);
+    // }
 
-    if (humanChoice === undefined) {
-      console.warn("You failed to input a valid hand entry. This match is invalidated. Please reset the page to play again.");
-    } else {
-      console.log(`You throw ${humanChoice}. Computer throws ${computerChoice}.`);
-    }
+    // if (humanChoice === undefined) {
+    //   console.warn("You failed to input a valid hand entry. This match is invalidated. Please reset the page to play again.");
+    // } else {
+    console.log(`You throw ${humanChoice}. Computer throws ${computerChoice}.`);
+    // }
 
     if (humanChoice === computerChoice) {
       console.log("This hand is a draw! No points are scored.");
@@ -76,23 +91,23 @@ function playGame() {
         }
     }
 
-    if (humanChoice !== undefined) {
+    // if (humanChoice !== undefined) {
       console.log(`Player score: ${humanScore}`);
       console.log(`Computer score: ${computerScore}`);
-    }
+    // }
   }
 
-  // console.log("Round1:");
-  // playRound(getHumanChoice(), getComputerChoice());
-  // console.log("Round2:");
-  // playRound(getHumanChoice(), getComputerChoice());
-  // console.log("Round3:");
-  // playRound(getHumanChoice(), getComputerChoice());
-  // console.log("Round4:");
-  // playRound(getHumanChoice(), getComputerChoice());
-  // console.log("Round5:");
-  // playRound(getHumanChoice(), getComputerChoice());
-
+  console.log("Round1:");
+  playRound(getHumanChoice(), getComputerChoice());
+  console.log("Round2:");
+  playRound(getHumanChoice(), getComputerChoice());
+  console.log("Round3:");
+  playRound(getHumanChoice(), getComputerChoice());
+  console.log("Round4:");
+  playRound(getHumanChoice(), getComputerChoice());
+  console.log("Round5:");
+  playRound(getHumanChoice(), getComputerChoice());
+  
   if (humanScore === computerScore) {
     console.log("This match is a draw! Good game.");
   } else if (humanScore > computerScore) {
@@ -102,6 +117,6 @@ function playGame() {
   }
 }
 
-playGame();
+// playGame();
 
 
