@@ -82,16 +82,16 @@ function playGame() {
     }
   }
 
-  console.log("Round1:");
-  playRound(getHumanChoice(), getComputerChoice());
-  console.log("Round2:");
-  playRound(getHumanChoice(), getComputerChoice());
-  console.log("Round3:");
-  playRound(getHumanChoice(), getComputerChoice());
-  console.log("Round4:");
-  playRound(getHumanChoice(), getComputerChoice());
-  console.log("Round5:");
-  playRound(getHumanChoice(), getComputerChoice());
+  // console.log("Round1:");
+  // playRound(getHumanChoice(), getComputerChoice());
+  // console.log("Round2:");
+  // playRound(getHumanChoice(), getComputerChoice());
+  // console.log("Round3:");
+  // playRound(getHumanChoice(), getComputerChoice());
+  // console.log("Round4:");
+  // playRound(getHumanChoice(), getComputerChoice());
+  // console.log("Round5:");
+  // playRound(getHumanChoice(), getComputerChoice());
 
   if (humanScore === computerScore) {
     console.log("This match is a draw! Good game.");

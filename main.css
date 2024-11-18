@@ -2,7 +2,18 @@
   margin: 0px;
   padding: 0px;
   font-family: Arial, Helvetica, sans-serif;  
-  background-color: #ebebeb;;
+  background-color: #ebebeb;
+}
+
+#container {
+  display: flex;
+}
+
+.play-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .sidebar, 
@@ -10,8 +21,15 @@
 h1,
 h2,
 p,
-a {
+a,
+button {
   background-color: #ebdfdf;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px;
+
 }
 
 .sidebar {
@@ -55,3 +73,5 @@ a {
   text-align: center;
   margin: 13px 0px;
 }
+
+

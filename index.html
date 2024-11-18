@@ -9,21 +9,33 @@
   </head>
 
   <body>
-    <div class="sidebar">
-      <div class="game-instructions">
-        <h1>Rock, Paper, Scissors</h1>
 
-        <h2>How to Play</h2>
-        <p>Choose a hand to throw against the computer opponent: Rock, Paper, or Scissors. A dialog box will prompt you to type in your chosen hand. The computer opponent will randomly choose one of the three hands to throw against yours. See the results of the game in the browser console. If you fail to input a hand entry, or input an invalid hand entry, the results of your current match are invalidated.</p>
-        <p class="points-scored">In the event of equal hands being thrown, no points are assigned. Otherwise, the winner of the hand scores a point. Whoever has the higher score by the end of 5 consecutive rounds wins the match.</p>
-
-        <h2>Winning Hands</h2>
-        <p>Rock beats Scissors, but loses to Paper; Paper beats Rock, but loses to Scissors; Scissors beats Paper, but loses to Rock. Equal hands draw.</p>
+    <div id="container">
+      
+      <div class="sidebar">
+        <div class="game-instructions">
+          <h1>Rock, Paper, Scissors</h1>
+          <h2>How to Play</h2>
+          <p>Choose a hand to throw against the computer opponent: Rock, Paper, or Scissors. A dialog box will prompt you to type in your chosen hand. The computer opponent will randomly choose one of the three hands to throw against yours. See the results of the game in the browser console. If you fail to input a hand entry, or input an invalid hand entry, the results of your current match are invalidated.</p>
+          <p class="points-scored">In the event of equal hands being thrown, no points are assigned. Otherwise, the winner of the hand scores a point. Whoever has the higher score by the end of 5 consecutive rounds wins the match.</p>
+          <h2>Winning Hands</h2>
+          <p>Rock beats Scissors, but loses to Paper; Paper beats Rock, but loses to Scissors; Scissors beats Paper, but loses to Rock. Equal hands draw.</p>
+        </div>
+        <a href="https://github.com/Kezy-d4" target="_blank" rel="noopener noreferrer">github.com/Kezy-d4</a>
       </div>
-      <a href="https://github.com/Kezy-d4" target="_blank" rel="noopener noreferrer">github.com/Kezy-d4</a>
+
+      <div class="play-area">
+        <div class="buttons">
+          <button>ROCK</button>
+          <button>PAPER</button>
+          <button>SCISSORS</button>
+        </div>
+      </div>
+
     </div>
 
     <script src="./main.js"></script>  
+
   </body>
 
 </html>
