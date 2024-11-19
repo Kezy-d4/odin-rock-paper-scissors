@@ -16,6 +16,12 @@ function getComputerChoice() {
 
 let logMsgs = document.querySelector('.log-messages');
 
+let humanScoreIndicator = document.querySelector('.human-score');
+let computerScoreIndicator = document.querySelector('.computer-score');
+
+let humanScore = 0;
+let computerScore = 0;
+
 function playRound(humanChoice, computerChoice) {
   let handChoices = document.createElement('p');
   handChoices.textContent = `You throw ${humanChoice}. Computer throws ${computerChoice}.`;
@@ -23,10 +29,31 @@ function playRound(humanChoice, computerChoice) {
 
   let roundWinner = document.createElement('p');
   roundWinner.textContent = compareHands(humanChoice, computerChoice);
+
+  if (roundWinner.textContent === youWinText) {
+    humanScore++;
+    humanScoreIndicator.textContent = humanScore;    
+  } else if (roundWinner.textContent === computerWinsText) {
+    computerScore++
+    computerScoreIndicator.textContent = computerScore;
+  }
+
   logMsgs.appendChild(roundWinner);
   
   let nextRound = document.createElement('p');
-  nextRound.textContent = 'On to the next round...';
+  
+  if (humanScore !== 5 && computerScore !== 5) {    
+    nextRound.textContent = 'On to the next round...';
+
+  } else if (humanScore === 5 || computerScore === 5) {
+
+    if (roundWinner.textContent === youWinText) {
+      nextRound.textContent = `Match complete! You have won ${humanScore} to ${computerScore}. Good game.`;
+
+    } else if (roundWinner.textContent === computerWinsText) {
+      nextRound.textContent = `Match complete! Computer has won ${computerScore} to ${humanScore}. Good game.`;
+    }
+  }
   logMsgs.appendChild(nextRound);
 }
 
