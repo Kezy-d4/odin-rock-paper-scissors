@@ -37,6 +37,10 @@ button {
   border-radius: 4px;
 }
 
+button:hover {
+  background-color: lightblue;
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;
