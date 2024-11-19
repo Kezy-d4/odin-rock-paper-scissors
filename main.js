@@ -14,14 +14,18 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-let buttons = document.querySelectorAll('button');
-
 function playRound(humanChoice, computerChoice) {
-  console.log(`You throw ${humanChoice}. Computer throws ${computerChoice}.`);
+  let handChoices = document.createElement('p');
+  handChoices.textContent = `You throw ${humanChoice}. Computer throws ${computerChoice}.`;
+  logMsgs.appendChild(handChoices);
 }
+
+let buttons = document.querySelectorAll('button');
+let logMsgs = document.querySelector('.log-messages');
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
+    removeAllChildNodes(logMsgs);
     playRound(capitalize(button.className), getComputerChoice());
   });
 });
