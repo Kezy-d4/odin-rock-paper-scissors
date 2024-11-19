@@ -39,6 +39,7 @@ button {
 
 button:hover {
   background-color: lightblue;
+  font-weight: bold;
 }
 
 .sidebar {

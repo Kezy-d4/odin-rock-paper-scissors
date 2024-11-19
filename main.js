@@ -14,8 +14,19 @@ function getComputerChoice() {
   console.log(computerChoice);
   return computerChoice;
 }
-
 getComputerChoice();
+
+let buttons = document.querySelectorAll('button');
+
+function getHumanChoice() {
+  buttons.forEach((button) => {
+
+    button.addEventListener('click', () => {
+      console.log(capitalize(button.className));
+    });
+  });
+}
+getHumanChoice();
 
 /*
 function getHumanChoice() {
