@@ -5,12 +5,17 @@
   background-color: #ebebeb;
 }
 
+.control-instructions {
+  background-color: #ebebeb;
+}
+
 #container {
   display: flex;
 }
 
 .play-area {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
@@ -29,7 +34,7 @@ button {
 button {
   margin: 0 10px;
   padding: 10px;
-
+  border-radius: 4px;
 }
 
 .sidebar {
