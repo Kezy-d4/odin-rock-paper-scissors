@@ -18,6 +18,18 @@ function playRound(humanChoice, computerChoice) {
   let handChoices = document.createElement('p');
   handChoices.textContent = `You throw ${humanChoice}. Computer throws ${computerChoice}.`;
   logMsgs.appendChild(handChoices);
+
+  let roundWinner = document.createElement('p');
+
+  if (humanChoice === computerChoice) {
+    roundWinner.textContent = 'This hand is a draw! No points are scored.';
+  }
+
+  logMsgs.appendChild(roundWinner);
+
+  let nextRound = document.createElement('p');
+  nextRound.textContent = 'On to the next round...';
+  logMsgs.appendChild(nextRound);
 }
 
 let buttons = document.querySelectorAll('button');
