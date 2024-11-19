@@ -3,30 +3,29 @@ function getComputerChoice() {
   let computerChoice;
 
   if (randomNumber === 0) {
-    computerChoice = "Rock";
+    computerChoice = 'Rock';
   } else if (randomNumber === 1) {
-    computerChoice = "Paper";
+    computerChoice = 'Paper';
   } else if (randomNumber === 2) {
-    computerChoice = "Scissors";
+    computerChoice = 'Scissors';
   }
 
   console.log(randomNumber);
-  console.log(computerChoice);
   return computerChoice;
 }
-getComputerChoice();
 
 let buttons = document.querySelectorAll('button');
 
-function getHumanChoice() {
-  buttons.forEach((button) => {
-
-    button.addEventListener('click', () => {
-      console.log(capitalize(button.className));
-    });
-  });
+function playRound(humanChoice, computerChoice) {
+  console.log(`You throw ${humanChoice}. Computer throws ${computerChoice}.`);
 }
-getHumanChoice();
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    playRound(capitalize(button.className), getComputerChoice());
+  });
+});
+
 
 /*
 function getHumanChoice() {
