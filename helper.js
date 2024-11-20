@@ -10,7 +10,7 @@ function removeAllChildNodes(parent) {
 
 let youWinText = 'You win this round and score a point!';
 let computerWinsText = 'Computer wins this round and scores a point!';
-let drawText = 'This round is a draw! No points are scored';
+let drawText = 'This round is a draw! No points are scored.';
 
 function compareHands(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {

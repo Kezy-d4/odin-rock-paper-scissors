@@ -65,6 +65,7 @@ buttons.forEach((button) => {
 
     if (humanScore !== 5 && computerScore !== 5) {
       playRound(capitalize(button.className), getComputerChoice());
+      
     } else if (humanScore === 5 || computerScore === 5) {
       let matchComplete = document.createElement('p');
       matchComplete.textContent = 'Match complete. Refresh the page to play again.';
