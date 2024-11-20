@@ -14,7 +14,7 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-let logMsgs = document.querySelector('.log-messages');
+let gameLog = document.querySelector('.log-messages');
 
 let humanScoreIndicator = document.querySelector('.human-score');
 let computerScoreIndicator = document.querySelector('.computer-score');
@@ -25,7 +25,7 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice) {
   let handChoices = document.createElement('p');
   handChoices.textContent = `You throw ${humanChoice}. Computer throws ${computerChoice}.`;
-  logMsgs.appendChild(handChoices);
+  gameLog.appendChild(handChoices);
 
   let roundWinner = document.createElement('p');
   roundWinner.textContent = compareHands(humanChoice, computerChoice);
@@ -38,7 +38,7 @@ function playRound(humanChoice, computerChoice) {
     computerScoreIndicator.textContent = computerScore;
   }
 
-  logMsgs.appendChild(roundWinner);
+  gameLog.appendChild(roundWinner);
   
   let nextRound = document.createElement('p');
   
@@ -48,21 +48,28 @@ function playRound(humanChoice, computerChoice) {
   } else if (humanScore === 5 || computerScore === 5) {
 
     if (roundWinner.textContent === youWinText) {
-      nextRound.textContent = `Match complete! You have won ${humanScore} to ${computerScore}. Good game.`;
+      nextRound.textContent = `Match complete! You have won ${humanScore} to ${computerScore}. Good game!`;
 
     } else if (roundWinner.textContent === computerWinsText) {
-      nextRound.textContent = `Match complete! Computer has won ${computerScore} to ${humanScore}. Good game.`;
+      nextRound.textContent = `Match complete! Computer has won ${computerScore} to ${humanScore}. Good game!`;
     }
   }
-  logMsgs.appendChild(nextRound);
+  gameLog.appendChild(nextRound);
 }
 
 let buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
-    removeAllChildNodes(logMsgs);
-    playRound(capitalize(button.className), getComputerChoice());
+    removeAllChildNodes(gameLog);
+
+    if (humanScore !== 5 && computerScore !== 5) {
+      playRound(capitalize(button.className), getComputerChoice());
+    } else if (humanScore === 5 || computerScore === 5) {
+      let matchComplete = document.createElement('p');
+      matchComplete.textContent = 'Match complete. Refresh the page to play again.';
+      gameLog.appendChild(matchComplete);
+    }
   });
 });
 
