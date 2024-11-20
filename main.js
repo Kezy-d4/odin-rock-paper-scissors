@@ -58,14 +58,18 @@ function playRound(humanChoice, computerChoice) {
 }
 
 let buttons = document.querySelectorAll('button');
+let roundNumIndicator = document.querySelector('.round-number');
+let roundNum = 0;
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     removeAllChildNodes(gameLog);
 
     if (humanScore !== 5 && computerScore !== 5) {
+      roundNum++;
+      roundNumIndicator.textContent = roundNum;
       playRound(capitalize(button.className), getComputerChoice());
-      
+
     } else if (humanScore === 5 || computerScore === 5) {
       let matchComplete = document.createElement('p');
       matchComplete.textContent = 'Match complete. Refresh the page to play again.';

@@ -71,6 +71,10 @@ button {
   background-color: #ebdfdf;
 }
 
+h2.round {
+  background-color: #ebebeb;
+}
+
 button {
   margin: 0 10px;
   padding: 10px;
